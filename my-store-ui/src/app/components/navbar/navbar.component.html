@@ -1,0 +1,11 @@
+<div class="flex justify-between gap-6">
+  <div class="flex gap-6">
+    <app-internal-link [title]="home" route="/"></app-internal-link>
+    <app-internal-link [title]="blog" route="/blog"></app-internal-link>
+  </div>
+  <div class="flex gap-6">
+    <button class="button button--logout" *ngIf="isLoggedIn" (click)="logout()">Signout</button>
+    <app-internal-link *ngIf="!isLoggedIn" [title]="signin" route="/signin"></app-internal-link>
+    <app-internal-link *ngIf="!isLoggedIn" [title]="signup" route="/signup"></app-internal-link>
+  </div>
+</div>

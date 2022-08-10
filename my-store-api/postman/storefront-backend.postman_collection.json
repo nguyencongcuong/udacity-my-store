@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "311e6f16-6193-4bd2-921a-e7a44546d295",
+		"name": "storefront-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21098532"
+	},
+	"item": [
+		{
+			"name": "API products",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/products",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/product/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductsByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/products/category/:category",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"products",
+								"category",
+								":category"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "Fruit"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductByID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGdOQTdtUzRjeDRRSEw0TnFvaGw4RXViOW5RTU1BN3NWbUlKLzQyanpWSGhRSGh4WGhmOExDIn0sImlhdCI6MTY1NjAwOTMxNH0.3UoV1wPrKmLM1QmeSM5_IHvQbw0-9qLz8JQYkBrK-co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/product/delete/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGdOQTdtUzRjeDRRSEw0TnFvaGw4RXViOW5RTU1BN3NWbUlKLzQyanpWSGhRSGh4WGhmOExDIn0sImlhdCI6MTY1NjAwOTMxNH0.3UoV1wPrKmLM1QmeSM5_IHvQbw0-9qLz8JQYkBrK-co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Orange\",\r\n    \"price\": \"35000\",\r\n    \"unit\": \"kg\",\r\n    \"currency\": \"VND\",\r\n    \"category\": \"Fruit\",\r\n    \"inventory\": 34582\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/product",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API users",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGdOQTdtUzRjeDRRSEw0TnFvaGw4RXViOW5RTU1BN3NWbUlKLzQyanpWSGhRSGh4WGhmOExDIn0sImlhdCI6MTY1NjAwOTMxNH0.3UoV1wPrKmLM1QmeSM5_IHvQbw0-9qLz8JQYkBrK-co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/users",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserByID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGdOQTdtUzRjeDRRSEw0TnFvaGw4RXViOW5RTU1BN3NWbUlKLzQyanpWSGhRSGh4WGhmOExDIn0sImlhdCI6MTY1NjAwOTMxNH0.3UoV1wPrKmLM1QmeSM5_IHvQbw0-9qLz8JQYkBrK-co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/user/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"tobokk4ii5\",\r\n    \"firstName\": \"Cuong\",\r\n    \"lastName\": \"Nguyen\",\r\n    \"password\": \"tobokkipassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/user",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"cuongnc.fe\",\r\n    \"password\": \"password123\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/user/auth",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API orders",
+			"item": [
+				{
+					"name": "getOrdersByUserID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGdOQTdtUzRjeDRRSEw0TnFvaGw4RXViOW5RTU1BN3NWbUlKLzQyanpWSGhRSGh4WGhmOExDIn0sImlhdCI6MTY1NjAwOTMxNH0.3UoV1wPrKmLM1QmeSM5_IHvQbw0-9qLz8JQYkBrK-co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/user/:userID/orders",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								":userID",
+								"orders"
+							],
+							"variable": [
+								{
+									"key": "userID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompletedOrdersByUserID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGdOQTdtUzRjeDRRSEw0TnFvaGw4RXViOW5RTU1BN3NWbUlKLzQyanpWSGhRSGh4WGhmOExDIn0sImlhdCI6MTY1NjAwOTMxNH0.3UoV1wPrKmLM1QmeSM5_IHvQbw0-9qLz8JQYkBrK-co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/user/:userID/completed-orders",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								":userID",
+								"completed-orders"
+							],
+							"variable": [
+								{
+									"key": "userID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

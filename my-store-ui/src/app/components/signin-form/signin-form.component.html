@@ -1,0 +1,6 @@
+<form #form="ngForm" (ngSubmit)="submitForm()">
+  <input type="text" name="username" placeholder="Username" [(ngModel)]="username" (ngModelChange)="handleUsername()">
+  <input type="password" name="password" placeholder="Password" [(ngModel)]="password" (ngModelChange)="handlePassword()">
+  <span class="">Don't have an account? <a routerLink="/signup">Signup here</a>.</span>
+  <button type="submit">Signin</button>
+</form>

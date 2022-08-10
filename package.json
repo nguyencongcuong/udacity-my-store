@@ -1,0 +1,18 @@
+{
+  "name": "udacity-my-store",
+  "version": "1.0.0",
+  "description": "Project 04 - Full Stack Web Development Nanodegree",
+  "scripts": {
+    "backend:install": "cd my-store-api && npm install",
+    "backend:build": "cd my-store-api && npm run build",
+    "backend:deploy": "cd my-store-api && npm run deploy",
+    "frontend:install": "cd my-store-ui && npm install",
+    "frontend:build": "cd my-store-ui && npm run build",
+    "frontend:deploy": "cd my-store-ui && npm run deploy"
+  },
+  "author": "Nguyen Cong Cuong",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.6.5"
+  }
+}

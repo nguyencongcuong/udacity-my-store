@@ -1,0 +1,21 @@
+<div class="grid grid-cols-12 items-center">
+  <img class="object-cover w-40 h-40 col-span-2" src="{{cartItem.product.image}}" alt="{{cartItem.product.name}}">
+  <div class="col-span-7">
+    <div class="">{{cartItem.product.name}}</div>
+    <div class="">{{cartItem.product.description}}</div>
+  </div>
+  <div class="col-span-1">{{cartItem.count}}</div>
+  <div class="col-span-1">{{cartItem.count * cartItem.product.price}} {{cartItem.product.currency}}</div>
+  <button
+    class="bg-red-500 text-gray-50 rounded px-4 py-2 col-span-1"
+    (click)="removeFromCart(cartItem.product)"
+  >
+    Remove
+  </button>
+</div>
+
+<app-floating-feedback
+  [isShown]="isFeedbacked"
+  [message]="cartItem.product.name + ' removed from cart successfully.'"
+  (isShownEvent)="hideFeedback($event)">
+</app-floating-feedback>

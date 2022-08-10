@@ -1,0 +1,12 @@
+node_modules
+migrations
+postman
+spec
+src
+.env
+.gitignore
+.eslintc.json
+.prettierrc.json
+tsconfig.json
+README.md
+REQUIREMENTS.md

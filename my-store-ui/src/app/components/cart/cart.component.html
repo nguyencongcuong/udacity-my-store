@@ -1,0 +1,13 @@
+<div *ngIf="isLoggedIn" class="relative" (click)="count > 0 && navigateToCheckoutPage()">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Shopping cart"
+    class="material-symbols-outlined"
+  >
+    shopping_bag
+  </mat-icon>
+  <div class="rounded-full w-5 h-5 border-2 border-gray-50 flex justify-center items-center bg-green-500 text-gray-50 text-sm p-1 absolute top-2 left-2 cart-count"
+  >
+    {{ count }}
+  </div>
+</div>

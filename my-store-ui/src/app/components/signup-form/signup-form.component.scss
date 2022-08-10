@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  input {
+    width: 500px;
+    max-width: 800px;
+    border-radius: 0.5rem;
+    border: 2px solid #d9d9d9;
+    padding: 1rem;
+  }
+  button {
+    width: 100%;
+    background-color: #528652;
+    border-radius: 0.5rem;
+    color: whitesmoke;
+    padding: 1rem 2rem;
+  }
+  a {
+    color: #528652;
+    font-weight: 600;
+  }
+  span {
+    align-self: end;
+  }
+}

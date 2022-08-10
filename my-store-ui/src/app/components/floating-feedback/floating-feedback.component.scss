@@ -1,0 +1,12 @@
+.floating-feedback {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  > div {
+    padding: 1rem 2rem;
+    background-color: #ffcc66;
+    border-radius: 0.25rem;
+    color: whitesmoke;
+    font-weight: 600;
+  }
+}

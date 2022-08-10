@@ -1,0 +1,15 @@
+<div *ngIf="isShown" (click)="handleIsShown(isShown)" class="floating-feedback" >
+  <div class="flex gap-6">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Shopping cart"
+      class="material-symbols-outlined"
+    >
+      notifications
+    </mat-icon>
+    <div class="">
+      {{message}}
+    </div>
+  </div>
+
+</div>
