@@ -4,77 +4,49 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
+  browser-tools: circleci/browser-tools@1.4.0
   # different jobs are calles later in the workflows sections
 jobs:
-  test:
+  test-build:
     docker:
       # the base image can run most needed actions with orbs
-      - image: "cimg/node:18.17"
+      - image: 'cimg/node:16.10-browsers'
     steps:
       # install node and checkout code
-      - node/install:
-          node-version: '18.17'
       - checkout
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - eb/setup
+      - aws-cli/setup
+      - checkout
+      - run: node --version
+      - run: google-chrome --version
+      - run: chromedriver --version
+      
       # Use root level package.json to install dependencies in the frontend app
       - run:
           name: Test Frontend
           command: |
-            npm run frontend:test
-  build:
-    docker:
-      # the base image can run most needed actions with orbs
-      - image: "cimg/node:18.17"
-    steps:
-      # install node and checkout code
-      - node/install:
-          node-version: '18.17'
-      - checkout
-      # Use root level package.json to install dependencies in the frontend app
-      - run:
-          name: Install Front-End Dependencies
-          command: |
             npm run frontend:install
-      - run:
-          name: Install API Dependencies
-          command: |
-            npm run backend:install
-      - run:
-          name: Front-End Build
-          command: |
+            npm run frontend:test
             npm run frontend:build
-      - run:
-          name: API Build
-          command: |
-            npm run backend:build
-  # deploy step will run only after manual approval
-  deploy:
-    docker:
-      - image: "cimg/base:stable"
-    steps:
-      - node/install:
-          node-version: '18.17'
-      - eb/setup
-      - aws-cli/setup
-      - checkout
-      - run:
-          name: Deploy App
-          command: |
             npm run frontend:deploy
-            npm run backend:deploy
+            
+#  # deploy step will run only after manual approval
+#  deploy:
+#    docker:
+#      - image: "cimg/base:stable"
+#    steps:
+#      - node/install:
+#          node-version: '18.17'
+#
+#      - run:
+#          name: Deploy App
+#          command: |
+#
+
 
 workflows:
   my-store:
     jobs:
-      - test
-      - build
-      - hold:
-          filters:
-            branches:
-              only:
-                - main
-          type: approval
-          requires:
-            - build
-      - deploy:
-          requires:
-            - hold
+      - test-build
