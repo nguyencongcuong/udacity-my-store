@@ -7,7 +7,7 @@
     "build": "ng build",
     "deploy": "npm install -f && npm run build && aws s3 cp --recursive --acl public-read ./dist/my-store-ui s3://my-store-2022/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
