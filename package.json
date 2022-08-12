@@ -5,9 +5,11 @@
   "scripts": {
     "backend:install": "cd my-store-api && npm install",
     "backend:build": "cd my-store-api && npm run build",
+    "backend:test": "cd my-store-api && npm run test",
     "backend:deploy": "cd my-store-api && npm run deploy",
     "frontend:install": "cd my-store-ui && npm install",
     "frontend:build": "cd my-store-ui && npm run build",
+    "frontend:test": "cd my-store-ui && npm run test",
     "frontend:deploy": "cd my-store-ui && npm run deploy"
   },
   "author": "Nguyen Cong Cuong",
