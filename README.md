@@ -34,7 +34,7 @@ Below are the screenshots of the working applications:
 
 ## CIRCLECI
 
-![CircleCI Environment Variables](./screenshots/chrome_nAS5gt1Rb7.png "CircleCI Environment Variables")
-![CircleCI Last Success Build - Deploy](./screenshots/chrome_qkvXc2gkrR.png "CircleCI Last Success Build - Deploy")
+![CircleCI Environment Variables](./screenshots/Screenshot%20from%202022-08-13%2009-55-37.png "CircleCI Environment Variables")
+![CircleCI Last Success Build - Deploy](./screenshots/Screenshot%20from%202022-08-13%2009-56-12.png "CircleCI Last Success Build - Deploy")
 
 #GET_PASSES_THIS_REPO_UDACITY_PLEASE
