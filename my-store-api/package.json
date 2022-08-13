@@ -6,14 +6,16 @@
   "scripts": {
     "start:dev": "npm run clean && npm run db-migrate-down-test && npm run db-migrate-up && nodemon ./src/index.ts",
     "start": "node ./dist",
-    "deploy": "npm install && npm run build && eb use Mystoreapi-env && eb deploy",
+    "deploy": "npm install && npm run setenv && npm run printenv && npm run build && eb use Mystoreapi-env && eb deploy",
     "build": "npm run clean && npx tsc",
     "db-migrate-up": "db-migrate up && db-migrate up -e test",
     "db-migrate-down-test": "db-migrate down --count 4 -e test",
     "test": "set ENV=test&& db-migrate down --count 4 -e test && db-migrate up -e test && npm run build && npx jasmine && db-migrate down --count 4 -e test",
     "clean": "rimraf dist/",
     "eslint": "npx eslint src/* --ext .ts",
-    "prettier": "npx prettier --write src/**/*.ts"
+    "prettier": "npx prettier --write src/**/*.ts",
+    "setenv": "eb setenv ENV=$ENV PORT=$PORT POSTGRES_DB=$POSTGRES_DB POSTGRES_DB_TEST=$POSTGRES_DB_TEST POSTGRES_HOST=$POSTGRES_HOST POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD SALT=$SALT SECRET_JWT_TOKEN_KEY=$SECRET_JWT_TOKEN_KEY",
+    "printenv": "eb printenv SECRET_JWT_TOKEN_KEY"
   },
   "author": "Nguyen Cong Cuong",
   "license": "ISC",
